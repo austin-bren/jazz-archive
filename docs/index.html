@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jazz">
+  <title>Jazz Archive</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Jazz Archive</h1>
+    <div class="backup">
+      <button id="export-button" type="button">Backup</button>
+      <button id="import-button" type="button">Restore</button>
+      <input id="import-input" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main>
+    <input id="search" type="search" placeholder="Search albums, artists, tracks, years"
+           aria-label="Search" autocomplete="off" autocapitalize="off" spellcheck="false">
+
+    <nav id="filters" class="filters" aria-label="Filter albums">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="favorites" aria-pressed="false">Favorites</button>
+      <button type="button" data-filter="to-listen" aria-pressed="false">To listen</button>
+      <button type="button" data-filter="listened" aria-pressed="false">Listened</button>
+    </nav>
+
+    <p id="summary" class="summary"></p>
+    <p id="message" class="message" role="status"></p>
+    <section id="results" class="results"></section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
